@@ -27,7 +27,7 @@ function computerPlay(){
 } // returns rock paper or scissors
 
 function playerPlay(){
-    let playerSelection = prompt("Rock, Paper, or Scissors? What do you choose?");
+    let playerSelection = prompt("Rock, Paper, or Scissors? What do you choose?").toLowerCase();
     
     while (true) {
        if (playerSelection == "rock" || playerSelection == "paper" || playerSelection == "scissors") {
@@ -36,7 +36,7 @@ function playerPlay(){
         else{
            alert ("Try again");
         }
-    playerSelection = prompt("Rock, Paper, or Scissors? What do you choose?");
+    playerSelection = prompt("Rock, Paper, or Scissors? What do you choose?").toLowerCase();
         
     }
     
