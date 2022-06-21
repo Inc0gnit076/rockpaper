@@ -1,19 +1,16 @@
-
+let playerScore = 0;
+let computerScore = 0;
 game();
-//playerPlay();
-//console.log(computerPlay());
-//let playerSelection = playerPlay();
-//let computerselection = computerPlay();
-//playRound(playerSelection, computerselection);
 
 function game(){
-    for (let i =0; i < 5; i++){ //change this eventually to run until one team scores 3 wins
-        //insert code to call playRound and keep score and return results
+    for (let i =0; i < 5; i++){      
         let playerSelection = playerPlay();
         let computerselection = computerPlay();
         playRound(playerSelection, computerselection);
+        console.log("Your Score: " + playerScore)
+        console.log("Computer Score: " + computerScore)
     }
-} //this works but just prints to the console
+} 
 
 function computerPlay(){
     const rndInt = Math.floor(Math.random() * 3); //gets random number between 0 and 2
@@ -27,7 +24,7 @@ function computerPlay(){
         return ("scissors");
     }
     
-} // this works and returns rock paper or scissors
+} // returns rock paper or scissors
 
 function playerPlay(){
     let playerSelection = prompt("Rock, Paper, or Scissors? What do you choose?");
@@ -46,7 +43,7 @@ function playerPlay(){
     return(playerSelection);
     
     
-} // this works and returns rock paper or scissors
+} // returns rock paper or scissors
 
 
 function playRound(playerSelection, computerselection){
@@ -56,9 +53,11 @@ function playRound(playerSelection, computerselection){
         }
         else if (computerselection == "paper"){
             console.log("You Lose! Paper beats Rock!");
+            computerScore ++;
         }
         else if (computerselection == "scissors"){
             console.log("You Win! Rock beats scissors!");
+            playerScore ++;
         }
     }
     if (playerSelection == "paper"){
@@ -67,9 +66,11 @@ function playRound(playerSelection, computerselection){
         }
         else if (computerselection == "rock"){
             console.log("You Win! Paper beats Rock!");
+            playerScore ++;
         }
         else if (computerselection == "scissors"){
             console.log("You Lose! scissors beats paper!");
+            computerScore ++;
         }
     }
     if (playerSelection == "scissors"){
@@ -78,10 +79,12 @@ function playRound(playerSelection, computerselection){
         }
         else if (computerselection == "paper"){
             console.log("You Win! Scissors beats Paper!");
+            playerScore ++;
         }
         else if (computerselection == "rock"){
             console.log("You Lose! Rock beats Scissors!");
+            computerScore ++;
         }
     }
     //insert code to compare two inputs and return "You Lose! Paper beats Rock"
-} // this works but just prints to the console
+} // this works and adds to scores
