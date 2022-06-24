@@ -1,6 +1,8 @@
 let playerScore = 0;
 let computerScore = 0;
-game();
+//game();
+
+
 
 function game(){
     for (let i =0; i < 5; i++){      
@@ -46,7 +48,8 @@ function playerPlay(){
 } // returns rock paper or scissors
 
 
-function playRound(playerSelection, computerselection){
+function playRound(){
+    let computerselection = computerPlay();
     if(playerSelection == "rock") {
         if (computerselection == "rock"){
             console.log("tie");
@@ -88,3 +91,16 @@ function playRound(playerSelection, computerselection){
     }
     //insert code to compare two inputs and return "You Lose! Paper beats Rock"
 } // this works and adds to scores
+
+
+
+const rock = document.getElementById('rock');
+const paper = document.getElementById('paper');
+const scissors = document.getElementById('scissors');
+
+rock.addEventListener('click' , () => playerSelection = "rock");
+rock.addEventListener('click' , playRound);
+paper.addEventListener('click' , () => playerSelection = "paper");
+paper.addEventListener('click' , playRound);
+scissors.addEventListener('click' , () => playerSelection = "scissors");
+scissors.addEventListener('click', playRound);
