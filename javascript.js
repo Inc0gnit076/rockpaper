@@ -89,6 +89,10 @@ function playRound(){
             computerScore ++;
         }
     }
+    console.log("Your Score: " + playerScore)
+    console.log("Computer Score: " + computerScore)
+    content.innerHTML = `Player: ${playerScore} Computer: ${computerScore}`;
+    div.appendChild(content);
     //insert code to compare two inputs and return "You Lose! Paper beats Rock"
 } // this works and adds to scores
 
@@ -104,3 +108,11 @@ paper.addEventListener('click' , () => playerSelection = "paper");
 paper.addEventListener('click' , playRound);
 scissors.addEventListener('click' , () => playerSelection = "scissors");
 scissors.addEventListener('click', playRound);
+
+
+
+const div = document.querySelector('div');
+const content = document.createElement('div');
+content.classList.add('content');
+//content.innerHTML = `Player: ${playerScore}`;
+//div.appendChild(content);
