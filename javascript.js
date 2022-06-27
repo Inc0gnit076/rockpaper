@@ -91,16 +91,26 @@ function playRound(){
     }
     console.log("Your Score: " + playerScore)
     console.log("Computer Score: " + computerScore)
-    content.innerHTML = `Player: ${playerScore} Computer: ${computerScore}`;
+    content.innerHTML = `Player: ${playerScore}     Computer: ${computerScore}`;
     div.appendChild(content);
+
+    if(computerScore == 5){
+        alert("Computer has won!!");
+    }
+    if(playerScore == 5){
+        alert("You Win!!!");
+    }
     //insert code to compare two inputs and return "You Lose! Paper beats Rock"
 } // this works and adds to scores
-
 
 
 const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
+const div = document.querySelector('div');
+const content = document.createElement('div');
+content.classList.add('content');
+
 
 rock.addEventListener('click' , () => playerSelection = "rock");
 rock.addEventListener('click' , playRound);
@@ -111,8 +121,6 @@ scissors.addEventListener('click', playRound);
 
 
 
-const div = document.querySelector('div');
-const content = document.createElement('div');
-content.classList.add('content');
+
 //content.innerHTML = `Player: ${playerScore}`;
 //div.appendChild(content);
